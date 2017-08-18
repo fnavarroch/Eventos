@@ -63,6 +63,7 @@ public class Sala {
 
 
 	public void mostrarTodasSalas(){
+		//se muestran todas las salas del arraylist
 		System.out.println("Las Salas existentes Son:");
 		for(int i=0;i<salas.size();i++)
 		{
