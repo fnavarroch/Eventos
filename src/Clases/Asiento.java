@@ -49,6 +49,7 @@ public class Asiento {
 	}
 	
 	public boolean AgregarAsiento(int totalAsiento, ArrayList<Sala> sala) {
+		
 	
 		return false;
 	}
