@@ -1,4 +1,4 @@
-
+package Clases;
 public class Asiento {
 
 	//Variables de instancia

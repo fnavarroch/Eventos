@@ -1,3 +1,4 @@
+package Clases;
 import java.util.ArrayList;
 
 public class Cliente {
@@ -8,7 +9,7 @@ public class Cliente {
 	private String apellido;
 	private String rut;
 	private int edad;
-	private ArrayList<Cliente> listaCliente = new ArrayList();
+	private ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
 	
 	
 	//Constructores
