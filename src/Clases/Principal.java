@@ -1,3 +1,5 @@
+package Clases;
+
 import java.util.ArrayList;
 
 public class Principal {
@@ -10,8 +12,7 @@ public class Principal {
 		ArrayList<Local> Local = new ArrayList<Local>();
 		ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 	
-	
-		// System.out.println(" Desea agregar sala ");
+
 	}
 
 }

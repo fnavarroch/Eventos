@@ -1,3 +1,4 @@
+package Clases;
 
 import java.io.*;
 import java.util.*;
@@ -7,23 +8,22 @@ public class Sala {
 	//Variables de instancia
 	
 	private String id;
-	private ArrayList<Sala> sala ;
-	private ArrayList<Asiento> asientos;
+	private int totalAsientos;
+	private Asiento asiento ;
+	private ArrayList<Sala> listaSala = new ArrayList<Sala>();// lista que almacena a las salas
 
 	//Constructor
 
-	public Sala(String id, ArrayList<Asiento> asientos) {
-		
+	public Sala(String id, int totalAsientos, Asiento asiento, ArrayList<Sala> listaSala) {
+		super();
 		this.id = id;
-		this.asientos = asientos;
+		this.totalAsientos = totalAsientos;
+		this.asiento = asiento;
+		this.listaSala = listaSala;
 	}
-
 	public Sala() {
 		// TODO Auto-generated constructor stub
 	}
-
-	//Métodos
-	
 	public String getId() {
 		return id;
 	}
@@ -31,28 +31,44 @@ public class Sala {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public ArrayList<Asiento> getAsientos() {
-		return asientos;
-	}
-
-	public void setAsientos(ArrayList<Asiento> asientos) {
-		this.asientos = asientos;
+	
+	public int getTotalAsientos() {
+		return totalAsientos;
 	}
 	
-	ArrayList<Sala> salas = new ArrayList<Sala>();
-	Sala objSala = new Sala();
+	public void setTotalAsientos(int totalAsientos) {
+		this.totalAsientos = totalAsientos;
+	}
+
+	public Asiento getAsiento() {
+		return asiento;
+	}
+
+	public void setAsiento(Asiento asiento) {
+		this.asiento = asiento;
+	}
+
+	public ArrayList<Sala> getListaSala() {
+		return listaSala;
+	}
+
+	public void setListaSala(ArrayList<Sala> listaSala) {
+		this.listaSala = listaSala;
+	}
+
+	
 	
 	public void agregarSala(String id) throws IOException{
-		
+		Sala objSala = new Sala();
 		int i=1 ;
 		String sala ; 
 		BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 		do{
 			
+			System.out.println(" Desea agregar sala ");
 			sala = lector.readLine();
 			objSala.setId(sala);
-			salas.add(objSala);
+			listaSala.add(objSala);
 			// Agregar llamada a metodo de agregar asientos 
 			
 			do{
@@ -67,17 +83,19 @@ public class Sala {
 	public void mostrarTodasSalas(){
 		//se muestran todas las salas del arraylist
 		System.out.println("Las Salas existentes Son:");
-		for(int i=0;i<salas.size();i++)
+		for(int i=0;i<listaSala.size();i++)
 		{
-			if(salas.isEmpty())
+			if(listaSala.isEmpty())
 			{
 				System.out.println("no existen Salas creadas");
 			}
 			else
 			{
-				System.out.println(salas.get(i));
+				System.out.println(listaSala.get(i));
 			}
-		
+	
+	
+	
 		}
 	}
 }
