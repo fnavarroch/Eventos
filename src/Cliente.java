@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Cliente {
 	
@@ -7,6 +8,8 @@ public class Cliente {
 	private String apellido;
 	private String rut;
 	private int edad;
+	private ArrayList<Cliente> cliente ;
+	
 	
 	//Constructores
 	
@@ -51,4 +54,6 @@ public class Cliente {
 		this.edad = edad;
 	}
 
+	ArrayList<Cliente> cliente1 = new ArrayList<Cliente>();
+	Cliente objCliente = new Cliente();
 }

@@ -7,6 +7,7 @@ public class Sala {
 	//Variables de instancia
 	
 	private String id;
+	private ArrayList<Sala> sala ;
 	private ArrayList<Asiento> asientos;
 
 	//Constructor
@@ -38,8 +39,10 @@ public class Sala {
 	public void setAsientos(ArrayList<Asiento> asientos) {
 		this.asientos = asientos;
 	}
+	
 	ArrayList<Sala> salas = new ArrayList<Sala>();
 	Sala objSala = new Sala();
+	
 	public void agregarSala(String id) throws IOException{
 		
 		int i=1 ;
@@ -47,7 +50,6 @@ public class Sala {
 		BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
 		do{
 			
-			System.out.println(" Desea agregar sala ");
 			sala = lector.readLine();
 			objSala.setId(sala);
 			salas.add(objSala);
@@ -75,9 +77,7 @@ public class Sala {
 			{
 				System.out.println(salas.get(i));
 			}
-	
-	
-	
+		
 		}
 	}
 }

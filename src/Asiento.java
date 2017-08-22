@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Asiento {
 
@@ -5,6 +6,9 @@ public class Asiento {
 	
 	private int numero;
 	private Cliente c;
+	private ArrayList<Asiento> asiento ;
+	private ArrayList<Cliente> cliente ;
+	
 	
 	//Constructor
 	
