@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Cliente {
 	
@@ -7,6 +8,8 @@ public class Cliente {
 	private String apellido;
 	private String rut;
 	private int edad;
+	private ArrayList<Cliente> listaCliente = new ArrayList();
+	
 	
 	//Constructores
 	
@@ -17,6 +20,10 @@ public class Cliente {
 		this.edad=edad;
 	}
 	
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
+
 	//Métodos
 	
 	public String getNombre() {
@@ -50,5 +57,32 @@ public class Cliente {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	public boolean agregarCliente(Cliente c) {
+		if(listaCliente.contains(c))
+			return false;
+		else
+		{
+			listaCliente.add(c);
+			return true;
+		}
+	}
+	public Cliente buscarClientePorRut(String r){
+		Cliente datosCliente = new Cliente();
+		for(int i=0; i<listaCliente.size();i++) {
+			datosCliente= listaCliente.get(i);
+			if(datosCliente.getRut().equals(r)) {
+				return datosCliente;
+			}
+		}
+		return null;
+	}
+	public int totalEntradaCompradas(int cantidadEntradas,int precioEntradas)
+	{
+		int total=0;
+		total= cantidadEntradas*precioEntradas;
+		return total;
+	
+	}
+	
 
 }
