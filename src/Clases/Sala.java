@@ -8,14 +8,16 @@ public class Sala {
 	//Variables de instancia
 	
 	private String id;
+	private int totalAsientos;
 	private ArrayList<Asiento> asientos;
 
 	//Constructor
 
-	public Sala(String id, ArrayList<Asiento> asientos) {
+	public Sala(String id, ArrayList<Asiento> asientos, int totalAsientos) {
 		
 		this.id = id;
 		this.asientos = asientos;
+		this.totalAsientos=totalAsientos;
 	}
 
 	public Sala() {
@@ -38,6 +40,13 @@ public class Sala {
 
 	public void setAsientos(ArrayList<Asiento> asientos) {
 		this.asientos = asientos;
+	}
+	public int getTotalAsientos() {
+		return totalAsientos;
+	}
+
+	public void setTotalAsientos(int totalAsientos) {
+		this.totalAsientos = totalAsientos;
 	}
 	ArrayList<Sala> salas = new ArrayList<Sala>();
 	Sala objSala = new Sala();
