@@ -1,20 +1,31 @@
 package Clases;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Local {
 	
+	private String nombre ;             //clave
 	private String ubicacion ;
-	private int fecha ;
-	private ArrayList<Sala> salas;
-	private ArrayList<Local> listaLocal = new ArrayList <Local>(); // almacena lista de los locales
+	private ArrayList<Sala> listaSalas = new ArrayList<Sala>();
 	
-	public Local(String ubicacion, int fecha, ArrayList<Sala> salas, ArrayList<Local> listaLocal) {
+	public Local(String nombre ,String ubicacion, ArrayList<Sala>listaSalas) {
 		super();
+		this.nombre=nombre;
 		this.ubicacion = ubicacion;
-		this.fecha = fecha;
-		this.salas = salas;
-		this.listaLocal = listaLocal;
+		this.listaSalas = listaSalas;
+	}
+
+	public Local() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getUbicacion() {
@@ -25,29 +36,31 @@ public class Local {
 		this.ubicacion = ubicacion;
 	}
 
-	public int getFecha() {
-		return fecha;
+	public ArrayList<Sala> getListaSalas() {
+		return listaSalas;
 	}
-
-	public void setFecha(int fecha) {
-		this.fecha = fecha;
-	}
-
-	public ArrayList<Sala> getSalas() {
-		return salas;
-	}
-
-	public void setSalas(ArrayList<Sala> salas) {
-		this.salas = salas;
-	}
-
-	public ArrayList<Local> getListaLocal() {
-		return listaLocal;
-	}
-
-	public void setListaLocal(ArrayList<Local> listaLocal) {
-		this.listaLocal = listaLocal;
+	public void setListaSalas(ArrayList<Sala> listaSalas) {
+		this.listaSalas = listaSalas;
 	}
 	
 	
+	public void agregarLocal(String nombre, String ubicacion) throws IOException{
+		Local objLocal = new Local();
+		Sala objSala = new Sala();
+		String idLocal=null;
+		int totalAsientos = 0;
+		ArrayList<Asiento> listaAsiento = null;
+		
+		objLocal.setNombre(nombre);
+		objLocal.setUbicacion(ubicacion);
+		objLocal.setListaSalas(listaSalas);
+		
+		listaSalas.add(objSala.agregarSala(idLocal, totalAsientos, listaAsiento));
+		
+	}
+
+
+	public void mostrarTodasSalas(){
+		//se muestran todos los locales
+	}
 }
