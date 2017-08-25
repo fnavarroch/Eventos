@@ -58,7 +58,7 @@ public class Sala {
 		objSala.setListaAsiento(listaAsiento);
 		
 		for(int i=0; i <totalAsientos; i++){
-			listaAsiento.add(objAsiento.AgregarAsiento((i+1), cli));
+		//	listaAsiento.add(objAsiento.AgregarAsiento((i+1), cli));
 		}
 		
 		return objSala;

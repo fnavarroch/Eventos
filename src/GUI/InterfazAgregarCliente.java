@@ -83,12 +83,8 @@ public class InterfazAgregarCliente extends JFrame {
 				String apellido = txtApellido.getText();
 				String rut = txtRut.getText();
 				int edad = Integer.parseInt(txtRut.getText());
-				datosCliente.setNombre(nombre);
-				datosCliente.setApellido(apellido);
-				datosCliente.setRut(rut);
-				datosCliente.setEdad(edad);
-				if(datosCliente.buscarClientePorRut(rut)!=null){
-				//	datosCliente.agregarCliente(datosCliente);
+				
+				if(datosCliente.agregarCliente(nombre, apellido, rut, edad)){
 					JOptionPane.showMessageDialog(null,"Cliente Agregado Correctamente");
 				}
 				else
