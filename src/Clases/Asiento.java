@@ -1,26 +1,33 @@
 package Clases;
 
-import java.util.ArrayList;
+import java.io.IOException;
+
 
 public class Asiento {
 
 	//Variables de instancia
 	
 	private int numero;
-	private Cliente c;
-	private ArrayList<Sala> sala = new ArrayList<Sala>();
+	private Cliente cliente ;  
+	 
+	
 	//Constructor
 	
-	public Asiento(int numero, Cliente c, ArrayList<Sala> sala) {
+	public Asiento(int numero, Cliente cliente) {
 		super();
 		this.numero = numero;
-		this.c = c;
-		this.sala = sala;
+		this.cliente = cliente;
+		
+	}
+
+
+	public Asiento() {
+		// TODO Auto-generated constructor stub
 	}
 
 
 	//Métodos
-	
+
 	public int getNumero() {
 		return numero;
 	}
@@ -30,27 +37,25 @@ public class Asiento {
 		this.numero = numero;
 	}
 
-	public Cliente getC() {
-		return c;
-	}
 
-	public void setC(Cliente c) {
-		this.c = c;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
 
-	public ArrayList<Sala> getSala() {
-		return sala;
+	public void setCliente (Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 
-	public void setSala(ArrayList<Sala> sala) {
-		this.sala = sala;
-	}
+	public Asiento AgregarAsiento(int numero, Cliente cli) throws IOException{
 	
-	public boolean AgregarAsiento(int totalAsiento, ArrayList<Sala> sala) {
+		Asiento asiento = new Asiento();
 		
+		asiento.setNumero(numero);
+		asiento.setCliente(cli.agregarCliente());
 	
-		return false;
+		return asiento;
 	}
+
 }

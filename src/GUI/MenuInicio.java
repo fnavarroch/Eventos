@@ -36,7 +36,7 @@ public class MenuInicio extends JFrame {
 	 */
 	public MenuInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 496, 378);
+		setBounds(100, 100, 301, 344);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -55,12 +55,12 @@ public class MenuInicio extends JFrame {
 				MenuInicio.this.dispose();
 			}
 		});
-		btnAccesoCharlas.setBounds(85, 151, 106, 51);
+		btnAccesoCharlas.setBounds(92, 49, 106, 51);
 		panel.add(btnAccesoCharlas);
 		
 		JButton btnAccesoSeminarios = new JButton("Seminarios");
 		btnAccesoSeminarios.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnAccesoSeminarios.setBounds(282, 151, 117, 51);
+		btnAccesoSeminarios.setBounds(70, 133, 155, 51);
 		panel.add(btnAccesoSeminarios);
 	}
 }

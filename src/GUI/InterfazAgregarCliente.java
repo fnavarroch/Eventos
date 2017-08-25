@@ -88,7 +88,7 @@ public class InterfazAgregarCliente extends JFrame {
 				datosCliente.setRut(rut);
 				datosCliente.setEdad(edad);
 				if(datosCliente.buscarClientePorRut(rut)!=null){
-					datosCliente.agregarCliente(datosCliente);
+				//	datosCliente.agregarCliente(datosCliente);
 					JOptionPane.showMessageDialog(null,"Cliente Agregado Correctamente");
 				}
 				else

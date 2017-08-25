@@ -9,23 +9,21 @@ public class Sala {
 	
 	private String id;
 	private int totalAsientos;
-	private ArrayList<Asiento> asientos;
+	private ArrayList<Asiento> listaAsiento = new ArrayList<Asiento>();
+	
 
 	//Constructor
 
-	public Sala(String id, ArrayList<Asiento> asientos, int totalAsientos) {
-		
+	public Sala(String id, int totalAsientos, ArrayList<Asiento> listaAsiento) {
+		super();
 		this.id = id;
-		this.asientos = asientos;
-		this.totalAsientos=totalAsientos;
+		this.totalAsientos = totalAsientos;
+		this.listaAsiento = listaAsiento;
+		
 	}
-
 	public Sala() {
 		// TODO Auto-generated constructor stub
 	}
-
-	//Métodos
-	
 	public String getId() {
 		return id;
 	}
@@ -33,61 +31,41 @@ public class Sala {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public ArrayList<Asiento> getAsientos() {
-		return asientos;
-	}
-
-	public void setAsientos(ArrayList<Asiento> asientos) {
-		this.asientos = asientos;
-	}
+	
 	public int getTotalAsientos() {
 		return totalAsientos;
 	}
-
+	
 	public void setTotalAsientos(int totalAsientos) {
 		this.totalAsientos = totalAsientos;
 	}
-	ArrayList<Sala> salas = new ArrayList<Sala>();
-	Sala objSala = new Sala();
-	public void agregarSala(String id) throws IOException{
+
+	public ArrayList<Asiento> getListaAsiento() {
+		return listaAsiento;
+	}
+	public void setListaAsiento(ArrayList<Asiento> listaAsiento) {
+		this.listaAsiento = listaAsiento;
+	}
+
+	public Sala agregarSala(String id, int totalAsientos, ArrayList<Asiento> listaAsiento) throws IOException{
+		Sala objSala = new Sala();
+		Asiento objAsiento = new Asiento();
+		Cliente cli = null;
+
 		
-		int i=1 ;
-		String sala ; 
-		BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-		do{
-			
-			System.out.println(" Desea agregar sala ");
-			sala = lector.readLine();
-			objSala.setId(sala);
-			salas.add(objSala);
-			// Agregar llamada a metodo de agregar asientos 
-			
-			do{
-			System.out.println("¿Desea Agregar otra Sala?, si ingrese 1 sino ingrese 0");
-			i= Integer.parseInt(lector.readLine());
-			}while(i>-1 && i<2);
+		objSala.setId(id);
+		objSala.setTotalAsientos(totalAsientos);
+		objSala.setListaAsiento(listaAsiento);
 		
-		}while(i==1);
+		for(int i=0; i <totalAsientos; i++){
+			listaAsiento.add(objAsiento.AgregarAsiento((i+1), cli));
+		}
+		
+		return objSala;
 	}
 
 
 	public void mostrarTodasSalas(){
-		//se muestran todas las salas del arraylist
-		System.out.println("Las Salas existentes Son:");
-		for(int i=0;i<salas.size();i++)
-		{
-			if(salas.isEmpty())
-			{
-				System.out.println("no existen Salas creadas");
-			}
-			else
-			{
-				System.out.println(salas.get(i));
-			}
-	
-	
-	
-		}
+		//se muestran todas las salas
 	}
 }
