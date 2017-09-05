@@ -44,7 +44,9 @@ public class InterfazAgregarCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public InterfazAgregarCliente() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setTitle("Agregar Cliente");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 346, 245);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -93,7 +95,7 @@ public class InterfazAgregarCliente extends JFrame {
 				
 			}
 		});
-		btnAgregarCliente.setBounds(185, 126, 107, 23);
+		btnAgregarCliente.setBounds(185, 126, 122, 26);
 		panel.add(btnAgregarCliente);
 		
 		JLabel lblNombre = new JLabel("Nombre");
@@ -111,5 +113,16 @@ public class InterfazAgregarCliente extends JFrame {
 		JLabel lblEdad = new JLabel("Edad");
 		lblEdad.setBounds(185, 10, 46, 14);
 		panel.add(lblEdad);
+		
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaCliente abrir = new VentanaCliente();
+				abrir.setVisible(true);
+				InterfazAgregarCliente.this.dispose();
+			}
+		});
+		btnAtras.setBounds(195, 158, 98, 26);
+		panel.add(btnAtras);
 	}
 }

@@ -1,9 +1,6 @@
 package GUI;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.FocusTraversalPolicy;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -16,11 +13,11 @@ import java.awt.Cursor;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.Component;
 import java.awt.Frame;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class InterfazModificarCharla extends JFrame {
 
 	private JPanel contentPane;

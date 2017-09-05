@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class InterfazEliminarCharla extends JFrame {
 
 	private JPanel contentPane;

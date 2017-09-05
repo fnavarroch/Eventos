@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
+@SuppressWarnings("serial")
 public class MenuInicio extends JFrame {
 
 	private JPanel contentPane;
