@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.JLabel;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class MenuInicio extends JFrame {
@@ -36,7 +38,9 @@ public class MenuInicio extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuInicio() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Comaticket");
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 301, 344);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,12 +60,38 @@ public class MenuInicio extends JFrame {
 				MenuInicio.this.dispose();
 			}
 		});
-		btnAccesoCharlas.setBounds(92, 49, 106, 51);
+		btnAccesoCharlas.setBounds(70, 141, 155, 51);
 		panel.add(btnAccesoCharlas);
 		
 		JButton btnAccesoSeminarios = new JButton("Seminarios");
+		btnAccesoSeminarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaSeminario abrir = new VentanaSeminario();
+				abrir.setVisible(true);
+				MenuInicio.this.dispose();
+			}
+		});
 		btnAccesoSeminarios.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnAccesoSeminarios.setBounds(70, 133, 155, 51);
+		btnAccesoSeminarios.setBounds(70, 204, 155, 51);
 		panel.add(btnAccesoSeminarios);
+		
+		JButton btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnCerrar.setBounds(103, 267, 98, 26);
+		panel.add(btnCerrar);
+		
+		JLabel lblBievenidosA = new JLabel("Bievenidos a ");
+		lblBievenidosA.setBounds(105, 50, 75, 16);
+		panel.add(lblBievenidosA);
+		
+		JLabel lblComaticket = new JLabel("COMATICKET");
+		lblComaticket.setForeground(Color.BLUE);
+		lblComaticket.setFont(new Font("Bookman Old Style", Font.BOLD, 27));
+		lblComaticket.setBounds(53, 78, 194, 33);
+		panel.add(lblComaticket);
 	}
 }

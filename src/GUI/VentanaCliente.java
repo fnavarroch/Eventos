@@ -34,7 +34,6 @@ public class VentanaCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaCliente() {
-		setType(Type.POPUP);
 		setResizable(false);
 		setTitle("Cliente");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -43,7 +42,9 @@ public class VentanaCliente extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		/**
+		 * Menu para Agregar un Nuevo Cliente a la lista
+		 */
 		JButton btnAgregarCliente = new JButton("Agregar Cliente");
 		btnAgregarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -54,7 +55,9 @@ public class VentanaCliente extends JFrame {
 		});
 		btnAgregarCliente.setBounds(66, 65, 129, 26);
 		contentPane.add(btnAgregarCliente);
-		
+		/**
+		 * Menu para Modificar A un Cliente ya existente
+		 */
 		JButton btnModificarCliente = new JButton("Modificar Cliente");
 		btnModificarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -66,6 +69,9 @@ public class VentanaCliente extends JFrame {
 		btnModificarCliente.setBounds(66, 99, 129, 26);
 		contentPane.add(btnModificarCliente);
 		
+		/**
+		 * Menu para eliminar un cliente en especifico mediante su rut
+		 */
 		JButton btnEliminarCliente = new JButton("Eliminar Cliente");
 		btnEliminarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -76,7 +82,9 @@ public class VentanaCliente extends JFrame {
 		});
 		btnEliminarCliente.setBounds(66, 136, 129, 26);
 		contentPane.add(btnEliminarCliente);
-		
+		/**
+		 * Regresa al Menu Principal
+		 */
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

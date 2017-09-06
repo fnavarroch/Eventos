@@ -176,7 +176,7 @@ public class InterfazModificarCharla extends JFrame {
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaCharlas abrir = new VentanaCharlas();
+				InterfazCharla abrir = new InterfazCharla();
 				abrir.setVisible(true);
 				InterfazModificarCharla.this.dispose();
 			}
@@ -185,7 +185,7 @@ public class InterfazModificarCharla extends JFrame {
 		contentPane.add(btnAtras);
 		
 		JLabel lblSeleccionarLasCasillas = new JLabel("Seleccionar las casillas a editar e Ingresar los nuevos datos");
-		lblSeleccionarLasCasillas.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblSeleccionarLasCasillas.setFont(new Font("Dialog", Font.ITALIC, 12));
 		lblSeleccionarLasCasillas.setBounds(10, 88, 341, 16);
 		contentPane.add(lblSeleccionarLasCasillas);
 		

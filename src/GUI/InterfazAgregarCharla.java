@@ -48,7 +48,7 @@ public class InterfazAgregarCharla extends JFrame {
 		setBackground(new Color(240, 240, 240));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 313, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -61,12 +61,12 @@ public class InterfazAgregarCharla extends JFrame {
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				VentanaCharlas abrir = new VentanaCharlas();
+				InterfazCharla abrir = new InterfazCharla();
 				abrir.setVisible(true);
 				InterfazAgregarCharla.this.dispose();
 			}
 		});
-		btnAtras.setBounds(325, 217, 89, 23);
+		btnAtras.setBounds(178, 199, 89, 23);
 		panel.add(btnAtras);
 		
 		txtId = new JTextField();
@@ -115,7 +115,7 @@ public class InterfazAgregarCharla extends JFrame {
 		panel.add(lblFecha);
 		
 		JButton btnAgregarCharla = new JButton("Agregar Charla");
-		btnAgregarCharla.setBounds(157, 217, 131, 23);
+		btnAgregarCharla.setBounds(157, 163, 131, 23);
 		panel.add(btnAgregarCharla);
 	}
 }

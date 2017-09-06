@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class InterfazModificarCliente extends JFrame {
@@ -68,6 +69,7 @@ public class InterfazModificarCliente extends JFrame {
 		contentPane.add(separator);
 		
 		JLabel lblSeleccioneLosCampos = new JLabel("Seleccione los campos a Editar e Ingrese los Nuevos Valores");
+		lblSeleccioneLosCampos.setFont(new Font("Dialog", Font.ITALIC, 12));
 		lblSeleccioneLosCampos.setBounds(10, 82, 346, 16);
 		contentPane.add(lblSeleccioneLosCampos);
 		

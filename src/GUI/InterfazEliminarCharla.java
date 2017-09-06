@@ -39,8 +39,9 @@ public class InterfazEliminarCharla extends JFrame {
 	 * Create the frame.
 	 */
 	public InterfazEliminarCharla() {
+		setTitle("Eliminar Charla");
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 214, 229);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -54,7 +55,7 @@ public class InterfazEliminarCharla extends JFrame {
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaCharlas abrir = new VentanaCharlas();
+				InterfazCharla abrir = new InterfazCharla();
 				abrir.setVisible(true);
 				InterfazEliminarCharla.this.dispose();
 			}

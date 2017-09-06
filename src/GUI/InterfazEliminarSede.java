@@ -12,10 +12,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class InterfazEliminarCliente extends JFrame {
+public class InterfazEliminarSede extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtRut;
+	private JTextField txtIdSede;
 
 	/**
 	 * Launch the application.
@@ -24,7 +24,7 @@ public class InterfazEliminarCliente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InterfazEliminarCliente frame = new InterfazEliminarCliente();
+					InterfazEliminarSede frame = new InterfazEliminarSede();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,38 +36,39 @@ public class InterfazEliminarCliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public InterfazEliminarCliente() {
+	public InterfazEliminarSede() {
+		setTitle("Eliminar Sede");
 		setResizable(false);
-		setTitle("Eliminar Cliente");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 254, 251);
+		setBounds(100, 100, 259, 247);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblIngreseRutCliente = new JLabel("Ingrese Rut Cliente que desea Eliminar");
-		lblIngreseRutCliente.setBounds(12, 12, 218, 16);
-		contentPane.add(lblIngreseRutCliente);
+		JLabel lblIngreseElCodigo = new JLabel("Ingrese el Codigo Identificador de la sede");
+		lblIngreseElCodigo.setBounds(10, 42, 233, 16);
+		contentPane.add(lblIngreseElCodigo);
 		
-		txtRut = new JTextField();
-		txtRut.setBounds(54, 40, 114, 20);
-		contentPane.add(txtRut);
-		txtRut.setColumns(10);
+		txtIdSede = new JTextField();
+		txtIdSede.setBounds(57, 83, 114, 20);
+		contentPane.add(txtIdSede);
+		txtIdSede.setColumns(10);
 		
-		JButton btnEliminarCliente = new JButton("Eliminar Cliente");
-		btnEliminarCliente.setBounds(54, 88, 122, 26);
-		contentPane.add(btnEliminarCliente);
+		JButton btnEliminarSede = new JButton("Eliminar Sede");
+		btnEliminarSede.setBounds(57, 127, 112, 26);
+		contentPane.add(btnEliminarSede);
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaCliente abrir = new VentanaCliente();
+				VentanaSede abrir = new VentanaSede();
 				abrir.setVisible(true);
-				InterfazEliminarCliente.this.dispose();
+				InterfazEliminarSede.this.dispose();
 			}
 		});
-		btnAtras.setBounds(70, 142, 98, 26);
+		btnAtras.setBounds(57, 181, 114, 26);
 		contentPane.add(btnAtras);
 	}
+
 }
