@@ -1,78 +1,107 @@
 package Clases;
-
-import java.util.ArrayList;
-
 public class Asiento {
 	//Variables de instancia
 	
-		private int total;
-		private String tipo;
-		private ArrayList<Sala> listaSala = new ArrayList<Sala>();
-		private ArrayList<Asiento> listaTipoAsiento = new ArrayList<Asiento>();
-	
+		private int totalAsientos;	//Cantidad de Asientos
+		private int precio;			//Precio del Asiento
+		private String tipo;		//Tipo especifico de Asiento
+		
 		//Constructor
-		public Asiento(int total, String tipo, ArrayList<Sala> listaSala, ArrayList<Asiento> listaTipoAsiento) {
-			super();
-			this.total = total;
+		
+		public Asiento(int total, int precio, String tipo) {
+			this.totalAsientos = total;
+			this.precio = precio;
 			this.tipo = tipo;
-			this.listaSala = listaSala;
-			this.listaTipoAsiento = listaTipoAsiento;
 		}
 		
 		public Asiento() {
 			// TODO Auto-generated constructor stub
 		}
 
-		//Geters y Seters
+		
+	   // Getters & Setters
 
-		public int getTotal() {
-			return total;
+		
+		public int getTotalAsientos() {
+			return totalAsientos;
 		}
 
-		public void setTotal(int total) {
-			this.total = total;
+		public void setTotalAsientos(int total) {
+			this.totalAsientos = total;
 		}
 
 		public String getTipo() {
-			return tipo;	
+			return tipo;
 		}
 
 		public void setTipo(String tipo) {
 			this.tipo = tipo;
 		}
-
-		public ArrayList<Asiento> getListaTipoAsiento() {
-			return listaTipoAsiento;
+		
+		
+		public int getPrecio() {
+			return precio;
 		}
 
-		public void setListaTipoAsiento(ArrayList<Asiento> listaTipoAsiento) {
-			this.listaTipoAsiento = listaTipoAsiento;
+		public void setPrecio(int precio) {
+			this.precio = precio;
 		}
+		
+		
 		//Metodos
-		
-		public boolean AgregarAsiento(int cantidad, String tipo) {
-			if(tipo!=null && cantidad>=0)
-				return false;
-			else {
-				Asiento aux = new Asiento();
-				for(int i =0; i<listaTipoAsiento.size();i++)
-				{
-					aux = (Asiento) listaTipoAsiento.get(i);
-					if(!tipo.equals(aux.getTipo()))
-						aux.setTipo(tipo);
-						aux.setTotal(cantidad);
-						listaTipoAsiento.add(aux);
-						return true;
-					
-				}
-				return false;
+
+		public boolean agregarAsiento(Asiento nuevo) {
+			if(nuevo.getTotalAsientos()>0)
+			{
+				this.setTotalAsientos(nuevo.getTotalAsientos());
+				this.setPrecio(nuevo.getPrecio());
+				this.setTipo(nuevo.getTipo());
+				return true;
 			}
+			return false;
 		}
 		
+		public void eliminarAsiento(String tipo) {
+			if(!tipo.equalsIgnoreCase(null))
+			{
+				this.setTipo(null);
+				this.setTotalAsientos(-1);
+				this.setPrecio(-1);
+			}		
+		}
 		
+		public boolean modificarAsiento(Asiento modAsiento) {
+			if(modAsiento.getTipo().equals(this.getTipo())) {
+				this.setTotalAsientos(modAsiento.getTotalAsientos());
+				this.setPrecio(modAsiento.getPrecio());
+				return true;
+			}
+			return false;
+		}
+		public int restaReservaAsiento(String tipo, int cantAsiento) {
+			if(tipo.equals(this.getTipo())) {
+				if(this.getTotalAsientos()<cantAsiento) {
+					return -1;
+				}
+				else {
+					this.setTotalAsientos(this.getTotalAsientos()-cantAsiento);
+					return this.getTotalAsientos();
+				}
+			}
+			return -1;
+		}
 		
-		
+		public void SumarAsientos(String tipo, int total) {
+			int suma =0;
+			if(tipo.equals(this.getTipo())) {
+				suma = this.getTotalAsientos()+total;
+				this.setTotalAsientos(suma);
+			}
+				
+			
+		}
 
+		
 }
 	
 	 

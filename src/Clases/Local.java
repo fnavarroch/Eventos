@@ -1,23 +1,38 @@
 package Clases;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class Local {
 	
-	private String nombre ;             //clave
-	private String ubicacion ;
-	private ArrayList<Sala> listaSalas = new ArrayList<Sala>();
+	private int id;					//Identificador de la Sede
+	private String nombre ;         //Nombre de la sede    
+	private String ubicacion;		//Ciudad de la sede
+	private ListaAsiento asientos;	//Lista con los Precios y Cantidad de Asientos posee la sede
 	
-	public Local(String nombre ,String ubicacion, ArrayList<Sala>listaSalas) {
+	//CONTRUCTORES
+	
+	/**
+	 * @param id
+	 * @param nombre
+	 * @param ubicacion
+	 */
+	public Local(int id, String nombre, String ubicacion) {
 		super();
-		this.nombre=nombre;
+		this.id = id;
+		this.nombre = nombre;
 		this.ubicacion = ubicacion;
-		this.listaSalas = listaSalas;
+	}
+	
+	public Local() {
 	}
 
-	public Local() {
-		// TODO Auto-generated constructor stub
+	
+	// GETTERS & SETTERS
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -36,31 +51,59 @@ public class Local {
 		this.ubicacion = ubicacion;
 	}
 
-	public ArrayList<Sala> getListaSalas() {
-		return listaSalas;
+	public ListaAsiento getAsientos() {
+		return asientos;
 	}
-	public void setListaSalas(ArrayList<Sala> listaSalas) {
-		this.listaSalas = listaSalas;
+
+	public void setAsientos(ListaAsiento asientos) {
+		this.asientos = asientos;
 	}
 	
+	// METODOS
+
+	public boolean ValidarLocal(int id) {
+		if(id == this.getId()) {
+			return true;
+		}
+		return false;
+	}
 	
-	public void agregarLocal(String nombre, String ubicacion) throws IOException{
-		Local objLocal = new Local();
-		Sala objSala = new Sala();
-		String idLocal=null;
-		int totalAsientos = 0;
-		ArrayList<Asiento> listaAsiento = null;
-		
-		objLocal.setNombre(nombre);
-		objLocal.setUbicacion(ubicacion);
-		objLocal.setListaSalas(listaSalas);
-		
-		listaSalas.add(objSala.agregarSala(idLocal, totalAsientos, listaAsiento));
+	public boolean agregarLocal(Local nuevoLocal, Asiento nuevoAsiento) {
+		if(this.ValidarLocal(nuevoLocal.getId())) {
+			return false;
+		}
+		else {
+			this.setId(nuevoLocal.getId());
+			this.setNombre(nuevoLocal.getNombre());
+			this.setUbicacion(nuevoLocal.getUbicacion());
+			this.asientos.agregarAsientoaLista(nuevoAsiento);
+			this.setAsientos(this.asientos);
+			return true;
+		}
 		
 	}
 
-
-	public void mostrarTodasSalas(){
-		//se muestran todos los locales
+	public boolean modificarLocal(Local modLocal, Asiento modAsiento) {
+		if(modLocal.ValidarLocal(modLocal.getId())) {
+			this.setId(modLocal.getId());
+			this.setNombre(modLocal.getNombre());
+			this.setUbicacion(modLocal.getUbicacion());
+			this.getAsientos().modificarAsientos(modAsiento);
+			return true;
+		}
+		return false;
 	}
-}
+	
+	public void eliminarLocal(int Id) {
+		if(this.ValidarLocal(id)) {
+			this.setId(-1);
+			this.setNombre(null);
+			this.setUbicacion(null);
+			this.getAsientos().eliminarTodosLosAsientos();
+			this.setAsientos(null);
+		}
+	}
+	
+	
+
+}	
