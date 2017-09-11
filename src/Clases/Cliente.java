@@ -1,5 +1,9 @@
 package Clases;
-
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 
 public class Cliente {
 	

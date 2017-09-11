@@ -1,4 +1,9 @@
 package Clases;
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 public class Asiento {
 	//Variables de instancia
 	

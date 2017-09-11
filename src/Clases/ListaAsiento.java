@@ -1,7 +1,11 @@
 package Clases;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 public class ListaAsiento {
 	private ArrayList<Asiento> listaAsiento = new ArrayList<Asiento>();	//Lista que Almacena los Asientos
 	private Asiento asiento;											//Acceso a los Datos de los Asientos

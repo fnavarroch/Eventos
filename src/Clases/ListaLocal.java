@@ -1,7 +1,11 @@
 package Clases;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 public class ListaLocal {
 	
 	private Local locales;

@@ -1,5 +1,9 @@
 package Clases;
-
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 public class Local {
 	
 	private int id;					//Identificador de la Sede

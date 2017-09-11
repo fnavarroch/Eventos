@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * @author Felipe Navarro Chamaca
  *
  */
+
 public class ListaCliente {
 	
 	private Cliente cliente;

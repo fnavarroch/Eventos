@@ -1,7 +1,11 @@
 package Clases;
 
 //import java.util.ArrayList;
-
+/**
+ * 
+ * @author Felipe Navarro Chamaca
+ *
+ */
 public class Principal {
 
 	public static void main(String[] args) {

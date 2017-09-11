@@ -2,7 +2,7 @@ package Clases;
 
 public class ReservaAsientos {
 	
-	private ListaEvento evento;
+	private ListaEventos evento;
 	private ListaCliente cliente;
 	private ListaAsiento asiento;
 	private String rutCliente;
@@ -28,7 +28,7 @@ public class ReservaAsientos {
 	 * @param cantidadAsientoGeneral
 	 * @param totalreserva
 	 */
-	public ReservaAsientos(ListaEvento evento, ListaCliente cliente, ListaAsiento asiento, String rutCliente,
+	public ReservaAsientos(ListaEventos evento, ListaCliente cliente, ListaAsiento asiento, String rutCliente,
 			int idEvento, int cantidadAsientoNiños, int cantidadAsientoAbuelo, int cantidadAsientoGeneral,
 			int totalreserva) {
 		this.evento = evento;
@@ -52,12 +52,12 @@ public class ReservaAsientos {
 
 	
 	
-	public ListaEvento getEvento() {
+	public ListaEventos getEvento() {
 		return evento;
 	}
 
 
-	public void setEvento(ListaEvento evento) {
+	public void setEvento(ListaEventos evento) {
 		this.evento = evento;
 	}
 

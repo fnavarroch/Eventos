@@ -5,6 +5,7 @@ package Clases;
  * @author Felipe Navarro Chamaca
  *
  */
+
 public class Evento {
 	
 	private int idEvento;						//Codigo identificador del Evento
