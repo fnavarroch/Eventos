@@ -5,7 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clases.ListaLocal;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,6 +20,7 @@ public class InterfazEliminarSede extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtIdSede;
+	private ListaLocal lista;
 
 	/**
 	 * Launch the application.
@@ -56,6 +61,16 @@ public class InterfazEliminarSede extends JFrame {
 		txtIdSede.setColumns(10);
 		
 		JButton btnEliminarSede = new JButton("Eliminar Sede");
+		btnEliminarSede.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(lista.eliminarSedes(Integer.parseInt(txtIdSede.getText()))) {
+					JOptionPane.showMessageDialog(null, "Sede Eliminada Correctamente");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "No existe la Sede");
+				}
+			}
+		});
 		btnEliminarSede.setBounds(57, 127, 112, 26);
 		contentPane.add(btnEliminarSede);
 		

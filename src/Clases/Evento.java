@@ -106,7 +106,7 @@ public class Evento {
 			this.getClientes().agregarCliente(nuevo.getClientes().getCliente());
 			this.setLocales(nuevo.getLocales());
 			Local nuevoLocal = nuevo.getLocales().getLocales();
-			Asiento nuevoAsiento = nuevo.getLocales().getLocales().getAsientos().getAsiento();
+			ListaAsiento nuevoAsiento = nuevo.getLocales().getLocales().getAsientos();
 			this.getLocales().agregarLocalaLista(nuevoLocal, nuevoAsiento);
 			return true;
 		}

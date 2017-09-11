@@ -5,7 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clases.Cliente;
+import Clases.ListaCliente;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JCheckBox;
@@ -25,6 +30,7 @@ public class InterfazModificarCliente extends JFrame {
 	private JTextField txtRut;
 	private JTextField txtApellido;
 	private JTextField txtEdad;
+	private ListaCliente lista;
 
 	/**
 	 * Launch the application.
@@ -154,6 +160,22 @@ public class InterfazModificarCliente extends JFrame {
 		txtEdad.setEnabled(false);
 		
 		JButton btnModificarCliente = new JButton("Modificar Cliente");
+		btnModificarCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cliente modCliente = new Cliente();
+				if(lista.buscarCliente(txtRutAValidar.getText())!=null) {
+					modCliente.setRut(txtRut.getText());
+					modCliente.setNombre(txtNombre.getText());
+					modCliente.setApellido(txtApellido.getText());
+					modCliente.setEdad(Integer.parseInt(txtEdad.getText()));
+					lista.modificarCliente(modCliente);
+					JOptionPane.showMessageDialog(null, "Cliente Modificado Correctamente");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Rut Invalido o No existe El Cliente");
+				}
+			}
+		});
 		btnModificarCliente.setBounds(276, 117, 133, 26);
 		contentPane.add(btnModificarCliente);
 		

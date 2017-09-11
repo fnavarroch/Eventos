@@ -1,5 +1,4 @@
 package GUI;
-import Clases.Cliente;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -13,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Clases.Cliente;
+import Clases.ListaCliente;
+
 
 
 @SuppressWarnings("serial")
@@ -23,6 +25,7 @@ public class InterfazAgregarCliente extends JFrame {
 	private JTextField txtApellido;
 	private JTextField txtRut;
 	private JTextField txtEdad;
+	private ListaCliente lista;
 
 	/**
 	 * Launch the application.
@@ -44,6 +47,7 @@ public class InterfazAgregarCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public InterfazAgregarCliente() {
+		
 		setResizable(false);
 		setTitle("Agregar Cliente");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -80,17 +84,17 @@ public class InterfazAgregarCliente extends JFrame {
 		JButton btnAgregarCliente = new JButton("Agregar Cliente");
 		btnAgregarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Cliente datosCliente = new Cliente();
-				String nombre = txtNombre.getText();
-				String apellido = txtApellido.getText();
-				String rut = txtRut.getText();
-				int edad = Integer.parseInt(txtRut.getText());
-				
-				if(datosCliente.agregarCliente(nombre, apellido, rut, edad)){
-					JOptionPane.showMessageDialog(null,"Cliente Agregado Correctamente");
+				Cliente nuevo = new Cliente();
+				nuevo.setRut(txtRut.getText());
+				nuevo.setNombre(txtNombre.getText());
+				nuevo.setApellido(txtApellido.getText());
+				nuevo.setEdad(Integer.parseInt(txtEdad.getText()));
+				if(lista.agregarCliente(nuevo)) {
+					JOptionPane.showMessageDialog(null, "Cliente Agregado Correctamente");
 				}
-				else
-					JOptionPane.showMessageDialog(null, "Cliente Ya existe");
+				else {
+					JOptionPane.showMessageDialog(null, "Cliente ya existe en la lista");
+				}
 				
 				
 			}

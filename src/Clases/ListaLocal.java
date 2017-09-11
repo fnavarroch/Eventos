@@ -47,7 +47,7 @@ public class ListaLocal {
 	//METODOS
 	
 
-	public boolean agregarLocalaLista(Local newLocal, Asiento newAsiento) {
+	public boolean agregarLocalaLista(Local newLocal, ListaAsiento newAsiento) {
 		
 			ListaLocal nuevoLocal = new ListaLocal();
 			nuevoLocal.locales.agregarLocal(newLocal, newAsiento);

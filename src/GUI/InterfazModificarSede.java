@@ -5,6 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clases.Asiento;
+import Clases.ListaAsiento;
+import Clases.Local;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
@@ -254,6 +259,30 @@ public class InterfazModificarSede extends JFrame {
 		txtNuevoIdSede.setEnabled(false);
 		
 		JButton btnModificarSede = new JButton("Modificar Sede");
+		btnModificarSede.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Local nuevolocal = new Local();
+				ListaAsiento nuevoAsiento = new ListaAsiento();
+				Asiento asientoAbuelo = new Asiento();
+				Asiento asientoNiño = new Asiento();
+				Asiento asientoGeneral = new Asiento();
+				
+				nuevolocal.setId(Integer.parseInt(txtNuevoIdSede.getText()));
+				nuevolocal.setNombre(txtNombreSede.getText());
+				nuevolocal.setUbicacion(txtCiudadSede.getText());
+				asientoAbuelo.setTipo("Abuelo");
+				asientoAbuelo.setPrecio(Integer.parseInt(txtReservaAbuelo.getText()));
+				asientoAbuelo.setTotalAsientos(Integer.parseInt(txtAsientosAbuelo.getText()));
+				nuevoAsiento.agregarAsientoaLista(asientoAbuelo);
+				asientoNiño.setTipo("Niño");
+				asientoNiño.setPrecio(Integer.parseInt(txtReservaNiños.getText()));
+				asientoNiño.setTotalAsientos(Integer.parseInt(txtAsientosNiños.getText()));
+				nuevoAsiento.agregarAsientoaLista(asientoNiño);
+				asientoGeneral.setTipo("General");
+				asientoGeneral.setPrecio(Integer.parseInt(txtReservaGral.getText()));
+				asientoGeneral.setTotalAsientos(Integer.parseInt(txtAsientosGral.getText()));
+			}
+		});
 		btnModificarSede.setBounds(34, 365, 119, 26);
 		contentPane.add(btnModificarSede);
 		

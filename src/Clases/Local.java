@@ -72,7 +72,7 @@ public class Local {
 		return false;
 	}
 	
-	public boolean agregarLocal(Local nuevoLocal, Asiento nuevoAsiento) {
+	public boolean agregarLocal(Local nuevoLocal, ListaAsiento nuevoAsiento) {
 		if(this.ValidarLocal(nuevoLocal.getId())) {
 			return false;
 		}
@@ -80,7 +80,7 @@ public class Local {
 			this.setId(nuevoLocal.getId());
 			this.setNombre(nuevoLocal.getNombre());
 			this.setUbicacion(nuevoLocal.getUbicacion());
-			this.asientos.agregarAsientoaLista(nuevoAsiento);
+			this.asientos.agregarAsientoaLista(nuevoAsiento.getAsiento());
 			this.setAsientos(this.asientos);
 			return true;
 		}

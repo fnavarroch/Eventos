@@ -5,8 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Clases.Asiento;
+import Clases.ListaAsiento;
+import Clases.ListaLocal;
+import Clases.Local;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,6 +31,7 @@ public class InterfazAgregarSede extends JFrame {
 	private JTextField txtAsientoAbuelo;
 	private JTextField txtCostoGral;
 	private JTextField txtAsientosGral;
+	private ListaLocal lista;
 
 	/**
 	 * Launch the application.
@@ -159,6 +167,37 @@ public class InterfazAgregarSede extends JFrame {
 		txtAsientosGral.setColumns(10);
 		
 		JButton btnAgregarSede = new JButton("Agregar Sede");
+		btnAgregarSede.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Local nuevolocal = new Local();
+				ListaAsiento nuevoAsiento = new ListaAsiento();
+				Asiento asientoAbuelo = new Asiento();
+				Asiento asientoNiño = new Asiento();
+				Asiento asientoGeneral = new Asiento();
+				
+				nuevolocal.setId(Integer.parseInt(txtIdSede.getText()));
+				nuevolocal.setNombre(txtNombreSede.getText());
+				nuevolocal.setUbicacion(txtCiudadSede.getText());
+				asientoAbuelo.setTipo("Abuelo");
+				asientoAbuelo.setPrecio(Integer.parseInt(txtCostoAbuelo.getText()));
+				asientoAbuelo.setTotalAsientos(Integer.parseInt(txtAsientoAbuelo.getText()));
+				nuevoAsiento.agregarAsientoaLista(asientoAbuelo);
+				asientoNiño.setTipo("Niño");
+				asientoNiño.setPrecio(Integer.parseInt(txtCostoNiños.getText()));
+				asientoNiño.setTotalAsientos(Integer.parseInt(txtAsientoNiños.getText()));
+				nuevoAsiento.agregarAsientoaLista(asientoNiño);
+				asientoGeneral.setTipo("General");
+				asientoGeneral.setPrecio(Integer.parseInt(txtCostoGral.getText()));
+				asientoGeneral.setTotalAsientos(Integer.parseInt(txtAsientosGral.getText()));
+				nuevoAsiento.agregarAsientoaLista(asientoGeneral);
+				if(lista.agregarLocalaLista(nuevolocal, nuevoAsiento)) {
+					JOptionPane.showInternalMessageDialog(null, "Sede Agregada Correctamente");
+				}
+				else {
+					JOptionPane.showInternalMessageDialog(null, "No se pudo Agregar la Sede");
+				}
+			}
+		});
 		btnAgregarSede.setBounds(309, 345, 112, 26);
 		contentPane.add(btnAgregarSede);
 	}
