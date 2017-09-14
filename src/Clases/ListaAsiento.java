@@ -46,7 +46,9 @@ public class ListaAsiento {
 	//Metodos
 	
 
-	
+	/*
+	 * Agrega un nuevo tipo de asiento a la lista
+	 */
 	public boolean agregarAsientoaLista(Asiento nuevoAsiento) {
 		Asiento nuevo = new Asiento();
 		if(nuevo.agregarAsiento(nuevoAsiento))
@@ -57,6 +59,9 @@ public class ListaAsiento {
 		return false;
 	}
 	
+	/*
+	 * Segun el tipo de asiento especifico modifica los atributos del asiento 
+	 */
 	public boolean modificarAsientos(Asiento modAsientos) {
 		for(int i=0; i<this.listaAsiento.size();i++) {
 			if(this.listaAsiento.get(i).getTipo().equals(modAsientos.getTipo())) {
@@ -67,7 +72,9 @@ public class ListaAsiento {
 		}
 		return false;
 	}
-		
+		/*
+		 * Elimina todos los asientos de la lista
+		 */
 	public boolean eliminarTodosLosAsientos() {
 		if(listaAsiento.isEmpty())
 			return false;
@@ -76,6 +83,10 @@ public class ListaAsiento {
 			return true;
 		}
 	}
+	
+	/*
+	 * busca un tipo de asiento en especifico y lo retorna con sus valores
+	 */
 	public Asiento buscarAsiento(String tipo) {
 		if(this.listaAsiento.isEmpty()) {
 			return null;

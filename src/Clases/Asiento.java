@@ -54,7 +54,7 @@ public class Asiento {
 		
 		
 		//Metodos
-
+		
 		public boolean agregarAsiento(Asiento nuevo) {
 			if(nuevo.getTotalAsientos()>0)
 			{
@@ -75,6 +75,10 @@ public class Asiento {
 			}		
 		}
 		
+		/**
+		 * Verifica que el tipo obtenido sea el mismo que el del que existe si es asi se cambian
+		 * la cantidad de asientos y el precio de estos mismos
+		 */
 		public boolean modificarAsiento(Asiento modAsiento) {
 			if(modAsiento.getTipo().equals(this.getTipo())) {
 				this.setTotalAsientos(modAsiento.getTotalAsientos());
@@ -83,6 +87,12 @@ public class Asiento {
 			}
 			return false;
 		}
+		
+		/**
+		 * Al total de Asientos disponibles se le resta la cantida solicitada por el cliente al momento de realizar la reserva
+		 * si la cantidad pedida es mayor a la disponible se retorna un -1 para volver a recibir la cantidad
+		 * sino se resta la cantidad al total disponible
+		 */
 		public int restaReservaAsiento(String tipo, int cantAsiento) {
 			if(tipo.equals(this.getTipo())) {
 				if(this.getTotalAsientos()<cantAsiento) {
@@ -96,6 +106,9 @@ public class Asiento {
 			return -1;
 		}
 		
+		/***
+		 * Si la reserva es Eliminada se retorna la cantidad de asientos pedidos por el Cliente
+		 */
 		public void SumarAsientos(String tipo, int total) {
 			int suma =0;
 			if(tipo.equals(this.getTipo())) {

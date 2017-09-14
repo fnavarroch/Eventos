@@ -44,7 +44,11 @@ public class ListaCliente {
 	}
 	
 	//METODOS
-	
+	/**
+	 * Se verifica que no exista el cliente en la lista 
+	 * si exite se retorna un false
+	 * si no existe se agrega a la lista y se retorna un true;
+	 */
 	public boolean agregarCliente(Cliente nuevo) {
 		if(this.cliente.validarRut(nuevo.getRut())) {
 			return false;
@@ -59,6 +63,11 @@ public class ListaCliente {
 		}
 	}
 	
+	/**
+	 * Verifica que la lista no este vacia para realizar la modificacion
+	 * busca el cliente que coincida con el rut del cliente a modificar
+	 * se vuelve a ingresar el nuevo cliente en la lista en su posicion 
+	 */
 	public boolean modificarCliente(Cliente modCliente) {
 		
 		if(this.listaCliente.isEmpty()) {
@@ -77,6 +86,9 @@ public class ListaCliente {
 		return false;
 	}
 	
+	/**
+	 * Elimina la lista completa de Clientes
+	 */
 	public boolean eliminarCliente() {
 		if(this.listaCliente.isEmpty())
 		{
@@ -88,6 +100,11 @@ public class ListaCliente {
 		}
 	}
 	
+	
+	/**
+	 * Elimina a un cliente en especifico 
+	 * se valida que hayan clientes en la lista y luego se busca al cliente a eliminar
+	 */
 	public boolean eliminarCliente(String rut) {
 		if(this.listaCliente.isEmpty()) {
 			return false;
@@ -104,6 +121,9 @@ public class ListaCliente {
 		}
 	}
 	
+	/**
+	 * Se busca un Cliente mediante su rut y se retorna al cliente especifico
+	 */
 	public Cliente buscarCliente(String rut) {
 		if(this.listaCliente.isEmpty()) {
 			return null;
@@ -119,6 +139,10 @@ public class ListaCliente {
 		}
 	}
 	
+	/**
+	 * Busca en la lista si existe un objeto Cliente igual en la lista
+	 * si existe lo retorna
+	 */
 	public Cliente buscarCliente(Cliente cliente) {
 		if(this.listaCliente.isEmpty()) {
 			return null;
@@ -130,6 +154,10 @@ public class ListaCliente {
 			return null;
 		}
 	}
+	
+	/**
+	 * retorna el rut de un Cliente especifico
+	 */
 	public String obtenerRut(Cliente buscar) {
 		if(this.listaCliente.isEmpty()) {
 			return null;

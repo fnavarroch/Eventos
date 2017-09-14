@@ -71,6 +71,9 @@ public class Cliente {
 	
 	//metodos
 	
+	/**
+	 * Se verifica que el rut entregado coindcida con el que se encuentra almacenado
+	 */
 	public boolean validarRut(String rut) {
 		if(rut.equals(this.getRut())) {
 			return true;
@@ -79,6 +82,10 @@ public class Cliente {
 		return false;
 	}
 	
+	/**
+	 * Se valida el rut obtenido del objeto si son iguales se retorna un false porque el cliente ya existe
+	 * sino se ingresan los datos del cliente 
+	 */
 	public boolean agregarCliente(Cliente nuevo) {
 		if(this.validarRut(nuevo.getRut()))
 		{
@@ -93,6 +100,11 @@ public class Cliente {
 		}
 	}
 	
+	/**
+	 * Se valida que exista el cliente mediante el rut ingresado
+	 * si existe se eliminan su datos y retorna un true
+	 * sino se retorna un false
+	 */
 	public boolean eliminarCliente(String rut) {
 		if(this.validarRut(rut)) {
 			this.setRut(null);
@@ -104,6 +116,10 @@ public class Cliente {
 		return false;
 		}
 		
+	
+	/**
+	 * Modifica solo los atributos que fueron cambiados en la ventana "InterfazModificarCliente"
+	 */
 	public void modificarCliente(Cliente modCliente) {
 		if(!modCliente.getRut().equals(null)) {
 			this.setRut(modCliente.getRut());

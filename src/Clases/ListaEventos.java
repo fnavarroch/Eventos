@@ -47,6 +47,11 @@ public class ListaEventos {
 	
 	//METODOS
 	
+	/*
+	 *agrega un evento si la lista esta vacia
+	 *sino verifica que la sede este ocupada en una fecha especifica 
+	 *y se agrega el evento a la lista 
+	 */
 	public boolean agregarEvento(Evento nuevo) {
 		if(this.listaEvento.isEmpty()) {
 			this.setEvento(nuevo);

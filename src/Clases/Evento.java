@@ -92,7 +92,10 @@ public class Evento {
 	//METODOS
 	
 	
-	
+	/**
+	 * verifica que el id del evento no exista 
+	 * si no existe se agregan los datos del evento
+	 */
 	public boolean agregarEvento(Evento nuevo) {
 		if(this.validarIDEvento(nuevo.getIdEvento())) {
 			return false;
@@ -112,6 +115,10 @@ public class Evento {
 		}
 	}
 	
+	/**
+	 * modifica los parametros del evento que fueron alterados en la ventana "InterfazModificarCharla" o "InterfazModificarSeminario"
+	 * segun corresponda el tippo de evento
+	 */
 	public boolean ModificarEvento(Evento modEvento) {
 		if(this.validarIDEvento(modEvento.getIdEvento())) {
 			if(modEvento.getIdEvento()>-1) {
@@ -157,7 +164,9 @@ public class Evento {
 		}
 		return false;
 	}
-	
+	/**
+	 * Valida las coicencias entre la fecha del evento actual y una ingresada por el usuario
+	 */
 	public boolean validarFechaEvento(String fecha) {
 		if(fecha.equals(this.fecha))
 		{
@@ -165,14 +174,18 @@ public class Evento {
 		}
 		return false;
 	}
-	
+	/*
+	 *Valida las coicencias entre la Sede del evento actual y una ingresada por el usuario
+	 */
 	public boolean validarSedeEvento(String sede) {
 		if(sede.equals(this.getLocales().buscarSede(sede))) {
 			return true;
 		}
 		return false;
 	}
-	
+	/*
+	 * Valida las coicencias entre la ID del evento actual y una ingresada por el usuario
+	 */
 	public boolean validarIDEvento(int id) {
 		if(id==this.idEvento) {
 			return true;
